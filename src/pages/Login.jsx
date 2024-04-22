@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaUserGraduate } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Outlet, useNavigate } from "react-router-dom";
+import AuthProvider, { tryContext } from "../context/AuthProvider";
 
 const Login = () => {
   const [email,setEmail]=useState("")
   const [pass,setPass]=useState("")
+  const {user,login}=useContext(tryContext)
 
   const navigate =useNavigate()
   const handleSubmit=(e)=>{
     e.preventDefault()
     console.log({email,pass});
-    if(email && pass){
-      navigate("/home")
-    }else{
-      alert("please enter correctly")
-    }
+    if(email.toUpperCase()==="FS-16" && pass==="12345"){
+    login({email,pass})
+  }else{
+    alert("please enter corretly")
+  }
+    
   }
   return (
     <div className="loginDiv">
@@ -33,27 +36,27 @@ const Login = () => {
           <form className="flex flex-col" onSubmit={handleSubmit}>
             <div className="flex flex-col text-left gap-2">
               <label
-                className=" font-montepasifico text-label hover:after:content-['usernumber'] hover:after:text-orange-400 hover:after:font-sans hover:after:text-[12px] hover:after:underline hover:after:ms-2 mb-[-.5rem]"
+                className=" font-montepasifico text-label hover:after:content-['FS-16'] hover:after:text-orange-400 hover:after:font-sans hover:after:text-[12px] hover:after:underline hover:after:ms-2 mb-[-.5rem]"
                 htmlFor="name"
               >
                 <FaUserGraduate className="inline me-2" />
                 Username
               </label>
-              <input type="text" id="name" required className="login-input"  onChange={(e)=>setEmail(e.target.value)} />
+              <input type="text" id="name" className="login-input"  onChange={(e)=>setEmail(e.target.value)} />
               <small className="text-right hover:cursor-pointer underline" onClick={()=>navigate("/username")} >
                 Forget Your Username?
               </small>
             </div>
             <div className="flex flex-col text-left gap-2">
               <label
-                className=" font-montepasifico text-label mb-[-.5rem]"
+                className=" font-montepasifico text-label mb-[-.5rem] hover:after:content-['12345'] hover:after:text-orange-400 hover:after:font-sans hover:after:text-[12px] hover:after:underline hover:after:ms-2"
                 htmlFor="password"
               >
-                {" "}
+                
                 <RiLockPasswordFill className="inline me-2" />
-                Password{" "}
+                Password
               </label>
-              <input type="password" id="password" required className="login-input" onChange={(e)=>setPass(e.target.value)} />
+              <input type="password" id="password" className="login-input" onChange={(e)=>setPass(e.target.value)} />
               <small className="text-right hover:cursor-pointer underline" onClick={()=>navigate("/password")} >
                 Forget Your Password?
               </small>

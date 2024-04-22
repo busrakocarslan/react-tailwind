@@ -1,11 +1,13 @@
-import Login from "./pages/Login";
 import Approuter from "./router/Approuter";
-
+import AuthProvider from "./context/AuthProvider";
 
 function App() {
   return (
-    <div className="App">
-    <Approuter/>
+    <div>
+      <AuthProvider>
+      <Approuter />{/* chilren prop burada */}
+      </AuthProvider>
+      
     </div>
   );
 }

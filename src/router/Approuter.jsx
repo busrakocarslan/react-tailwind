@@ -7,11 +7,13 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Products from "../pages/Products";
 import NotFound from "../pages/NotFound";
+import Navbar from "../components/Navbar";
 
 const Approuter = () => {
   return (
     <div>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
+      <Navbar/>
         <Routes>
           <Route path="/" element={<Login />}>
             <Route path="/username" element={<Username />} />
@@ -22,7 +24,7 @@ const Approuter = () => {
           <Route path="/products" element={<Products />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </div>
   );
 };
