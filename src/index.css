@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+  .loginDiv{
+    background-image: linear-gradient(to top, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
+    
+    @apply flex justify-center items-center min-h-screen;
+  }
+  .login-input{
+    height: 34px;
+    border-bottom:3px solid #FB923C;
+    background-color: inherit;
+    padding: .2rem;
+    outline: none;
+   @apply focus:caret-slate-800
+  }
+ 
+}
+
+
+/* eğer kendi yaptığımız elememtlere özellik vereceksek componenet başlığı altıda topluyoruz ancak base elemenlere yani h1 div vb elemenlere özellik vereceksek base başlığı altında topluyoruz.
+min-h-screen tüm sayfayı kaplaması için
+caret cursorun rengini değiştiriyor. */
