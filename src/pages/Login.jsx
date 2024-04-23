@@ -2,12 +2,12 @@ import React, { useContext, useState } from "react";
 import { FaUserGraduate } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Outlet, useNavigate } from "react-router-dom";
-import AuthProvider, { tryContext } from "../context/AuthProvider";
+import AuthProvider, { AuthContext } from "../context/AuthProvider";
 
 const Login = () => {
   const [email,setEmail]=useState("")
   const [pass,setPass]=useState("")
-  const {user,login}=useContext(tryContext)
+  const {user,login}=useContext(AuthContext)
 
   const navigate =useNavigate()
   const handleSubmit=(e)=>{

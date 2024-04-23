@@ -4,22 +4,24 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-export const tryContext=createContext()// componetin içinden eksport edemeyeceğimizden dışında tanımlamalıyız. 
+export const AuthContext=createContext()// componetin içinden eksport edemeyeceğimizden dışında tanımlamalıyız. 
 
 const AuthProvider = (props) => {
-  const [user,setUser]= useState("")
+  const [user,setUser]= useState(false)
   const navigate=useNavigate()
   const login=(info)=>{
     setUser(info)
-    navigate("/home")
+    navigate("/dashboard")
     
   }
+  const logOut=()=>setUser()
+  console.log(logOut);
   
   return (
-    <tryContext.Provider value={{user,login}}>
+    <AuthContext.Provider value={{user,login}}>
       {props.children}
 
-    </tryContext.Provider>
+    </AuthContext.Provider>
   )
 }
 

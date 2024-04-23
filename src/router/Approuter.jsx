@@ -8,22 +8,26 @@ import About from "../pages/About";
 import Products from "../pages/Products";
 import NotFound from "../pages/NotFound";
 import Navbar from "../components/Navbar";
+import PrivateRouter from "./PrivateRouter";
 
 const Approuter = () => {
   return (
     <div>
       {/* <BrowserRouter> */}
-      <Navbar/>
-        <Routes>
-          <Route path="/" element={<Login />}>
-            <Route path="/username" element={<Username />} />
-            <Route path="/password" element={<Password />} />
-          </Route>
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+      {/* <Navbar/> */}
+      <Routes>
+        <Route path="/" element={<Login />}>
+          <Route path="/username" element={<Username />} />
+          <Route path="/password" element={<Password />} />
+        </Route>
+        <Route path="/dashboard" element={<PrivateRouter />}>
+          {/*privite router dosyasında bşr koşul oluşturduğumuz için burayı direk o elemenete bağladık */}
+          <Route path="" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="products" element={<Products />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       {/* </BrowserRouter> */}
     </div>
   );

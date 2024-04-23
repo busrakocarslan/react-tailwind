@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link,NavLink } from 'react-router-dom'
 import { FcHome } from "react-icons/fc"; 
 import { FaSignOutAlt } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
+import { AuthContext } from '../context/AuthProvider';
 
 const navigation=[
     {
@@ -26,6 +27,7 @@ const navigation=[
 
 const Navbar = () => {
     const[show,setShow]=useState(false)
+    const {logout}=useContext(AuthContext)
   return (
     <nav className='h-auto pt-4 bg-slate-400' >
         <div>
@@ -52,7 +54,7 @@ const Navbar = () => {
                             
                         }
                     </ul>
-                <NavLink to="/" className='bg-slate-900 text-orange-400 rounded-xl font-montepasifico '>LogOut<FaSignOutAlt className='inline-block ms-3'/></NavLink>
+                <NavLink to="/" className='bg-slate-900 text-orange-400 rounded-xl font-montepasifico' onClick={()=>logout()}>LogOut<FaSignOutAlt className='inline-block ms-3'/></NavLink>
 
                 </div>
                 
