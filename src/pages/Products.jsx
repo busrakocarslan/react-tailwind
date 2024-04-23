@@ -1,33 +1,14 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import Loading from "../components/Loading";
 import SearchInput from "../components/SearchInput";
+import { useProductsContext } from "../context/ProductProvider";
 import { GiH2O } from "react-icons/gi";
 
+
 const Products = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [search, setSearch] = useState("");
-
-  const getData = async () => {
-    setLoading(true)
-    try {
-      const { data } = await axios(
-        `https://dummyjson.com/products/search?q=${search}&skip=60` //skip ile 30 üründen başladım api en fazla 30 ürün verdiğinden limiti de 30 yaptım
-      );
-      console.log(data);
-      setProducts(data.products);
-    } catch (error) {
-      console.log(error);
-    }finally{
-      setLoading(false)
-    }
-  };
-  useEffect(() => {
-    getData();
-  }, [search]);
-
+  const {products,loading,setSearch,search}=useProductsContext()
+ 
   return (
     <div className="mx-auto max-w-2xl px-4 py-10 sm:py-20 lg:max-w-7xl lg:px-8 ">
       <SearchInput setSearch={setSearch} search={search}/>
