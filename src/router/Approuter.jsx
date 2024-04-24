@@ -10,6 +10,8 @@ import NotFound from "../pages/NotFound";
 import Navbar from "../components/Navbar";
 import PrivateRouter from "./PrivateRouter";
 import ProductDetail from "../pages/ProductDetail";
+import Contact from "../pages/Contact";
+import ComingSoon from "../pages/ComingSoon";
 
 const Approuter = () => {
   return (
@@ -27,8 +29,10 @@ const Approuter = () => {
           <Route path="about" element={<About />} />
           <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetail />} />
+          <Route path="contact" element={<Contact/>}/>
         </Route>
         <Route path="*" element={<NotFound />} />
+        <Route path="/comingsoon" element={<ComingSoon/>}/>
       </Routes>
       {/* </BrowserRouter> */}
     </div>

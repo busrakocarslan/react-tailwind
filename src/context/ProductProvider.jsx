@@ -20,7 +20,7 @@ const ProductProvider = ({children}) => {
       setLoading(true)
       try {
         const { data } = await axios(
-          `https://dummyjson.com/products/search?q=${search}&skip=60` //skip ile 30 üründen başladım api en fazla 30 ürün verdiğinden limiti de 30 yaptım
+          `https://dummyjson.com/products/search?q=${search}&skip=30` //skip ile 30 üründen başladım api en fazla 30 ürün verdiğinden limiti de 30 yaptım
         );
         console.log(data);
         setProducts(data.products);

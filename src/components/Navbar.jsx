@@ -29,12 +29,12 @@ const Navbar = () => {
     const[show,setShow]=useState(false)
     const {logout}=useContext(AuthContext)
   return (
-    <nav className='h-auto pt-4 bg-slate-400' >
+    <nav className='h-auto py-2 bg-gray-300' >
         <div>
         
             <div className='md:hidden flex justify-between p-5'>
             <Link to="https://clarusway.com" target='true'><FcHome /></Link>
-                <button onClick={()=>setShow(!show)} className='menu-btn text-gray-900 hover:text-gray-500 text-label' > {show ? <MdClose /> :
+                <button onClick={()=>setShow(!show)} className='menu-btn text-gray-900 hover:text-gray-500 text-label duration-150' > {show ? <MdClose /> :
                     <GiHamburgerMenu />}
 
                 </button>
@@ -47,7 +47,7 @@ const Navbar = () => {
                     <ul className='md:flex gap-5 justify-start w-[90vw]  m-5'>
                         {
                             navigation.map(item=>(
-                                <li key={item.title} className='hover:bg-orange-400 hover:inline-block rounded-e-3xl ps-1 hover:cursor-pointer pe-1'>
+                                <li key={item.title} className='hover:font-montepasifico hover:text-orange-400 ps-1 hover:cursor-pointer pe-1 transition-all duration-300 '>
                                     <NavLink to={item.path} element={item.title} />{item.title}
                                 </li>
                             ))
