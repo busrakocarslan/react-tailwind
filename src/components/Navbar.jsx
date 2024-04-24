@@ -49,7 +49,9 @@ const Navbar = () => {
                     <ul className='md:flex gap-5 justify-start w-[90vw]  m-5'>
                         {
                             navigation.map(item=>(
-                                <li key={item.title} className='hover:font-montepasifico hover:text-orange-400 ps-1 hover:cursor-pointer pe-1 transition-all duration-300 '>
+                                <li key={item.title} className={`hover:font-montepasifico hover:text-orange-400 ps-1 hover:cursor-pointer pe-1 transition-all duration-300 ${
+                                    location.pathname === item.path ? "font-montepasifico text-orange-400" : ""
+                                  } `} >
                                    <NavLink to={item.path} element={item.title} >{item.title}</NavLink>
                                 </li>
                             ))
