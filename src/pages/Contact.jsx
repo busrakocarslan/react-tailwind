@@ -32,9 +32,9 @@ const Contact = () => {
         },
     ]
     return (
-        <main className="py-10 text-center">
+        <main className="py-10 text-center min-h-[80vh] ">
             <div className=" text-gray-600 md:px-8">
-                <div className=" space-y-3 text-center">
+                <div className=" space-y-3 text-center mt-10">
                     <h3 className="text-gray-400 font-montepasifico uppercase text-center font-bold text-2xl">
                         Contact
                     </h3>

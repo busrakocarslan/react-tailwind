@@ -4,7 +4,7 @@ import ProductProvider from "./context/ProductProvider";
 
 function App() {
   return (
-    <div>
+    <div className=" min-h-[100vh]">
       <AuthProvider>
         <ProductProvider>
           <Approuter />

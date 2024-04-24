@@ -2,9 +2,9 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-h-[80vh]">
       {" "}
-      <section className="p-4 ">
+      <section className="p-4  ">
         <div className="max-w-screen-xl mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8">
           <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
             <h1 className="text-xl text-orange-400 font-montepasifico">

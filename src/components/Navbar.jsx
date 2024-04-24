@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link,NavLink } from 'react-router-dom'
+import { Link,NavLink, useLocation } from 'react-router-dom'
 import { FcHome } from "react-icons/fc"; 
 import { FaSignOutAlt } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -9,27 +9,29 @@ import { AuthContext } from '../context/AuthProvider';
 const navigation=[
     {
         title:"Home",
-        path:"/"
+        path:"/dashboard"
     },
     {
         title:"About",
-        path:"/about"
+        path:"/dashboard/about"
     },
     {
         title:"Products",
-        path:"/products"
+        path:"/dashboard/products"
     },
     {
         title:"Contact",
-        path:"/contact"
+        path:"/dashboard/contact"
     }
 ]
 
 const Navbar = () => {
     const[show,setShow]=useState(false)
     const {logout}=useContext(AuthContext)
+    const location=useLocation()
   return (
-    <nav className='h-auto py-2 bg-gray-300' >
+    
+    <nav className='min-h-[10vh] py-2 bg-gray-300' >
         <div>
         
             <div className='md:hidden flex justify-between p-5'>
@@ -48,7 +50,7 @@ const Navbar = () => {
                         {
                             navigation.map(item=>(
                                 <li key={item.title} className='hover:font-montepasifico hover:text-orange-400 ps-1 hover:cursor-pointer pe-1 transition-all duration-300 '>
-                                    <NavLink to={item.path} element={item.title} />{item.title}
+                                   <NavLink to={item.path} element={item.title} >{item.title}</NavLink>
                                 </li>
                             ))
                             

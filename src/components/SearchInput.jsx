@@ -1,12 +1,10 @@
 import React from "react";
 import { FaSearchengin } from "react-icons/fa6";
-const SearchInput = ({setSearch,search}) => {
+const SearchInput = ({setSearch,search,category,setCategory}) => {
   return (
     <div className="">
-      <div className="relative w-6/12 mx-auto">
-        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <FaSearchengin />
-        </div>
+      <div className="w-auto">
+        
         <input
           type="search"
           onChange={(e)=>setSearch(e.target.value)}
@@ -15,6 +13,13 @@ const SearchInput = ({setSearch,search}) => {
           placeholder="Search products..."
           value={search}
         />
+        <div>
+        <button className="border-2 border-orange-400 text-gray-600 font-montepasifico rounded-xl p-2 m-3 hover:bg-gray-600 hover:text-orange-400" onClick={()=>setCategory("")}>All</button>
+        <button className="border-2 border-orange-400 text-gray-600 font-montepasifico rounded-xl p-2 m-3 hover:bg-gray-600 hover:text-orange-400" onClick={()=>setCategory("home")}>Home-Decoration</button>
+        <button className="border-2 border-orange-400 text-gray-600 font-montepasifico rounded-xl p-2 m-3 hover:bg-gray-600 hover:text-orange-400" onClick={()=>setCategory("laptop")}>Laptops</button>
+        <button className="border-2 border-orange-400 text-gray-600 font-montepasifico rounded-xl p-2 m-3 hover:bg-gray-600 hover:text-orange-400" onClick={()=>setCategory("bag")}>Bag</button>
+        <button className="border-2 border-orange-400 text-gray-600 font-montepasifico rounded-xl p-2 m-3 hover:bg-gray-600 hover:text-orange-400" onClick={()=>setCategory("glasses")}>Glasses</button>
+        </div>
       </div>
     </div>
   );

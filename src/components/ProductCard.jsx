@@ -5,8 +5,8 @@ const ProductCard = ({title,category,thumbnail,price,id}) => {
   const navigate=useNavigate()
 
   return (
-    <div className="cursor-pointer" onClick={()=>navigate(`${id}`)}>
-      <div className="w-full rounded-md bg-gray-200 hover:opacity-75 lg:h-80">
+    <div className="cursor-pointer text-center" onClick={()=>navigate(`${id}`)}>
+      <div className="w-80 m-auto rounded-md bg-gray-200 hover:opacity-75 lg:h-80">
         <img
           src={thumbnail}
           alt={title}

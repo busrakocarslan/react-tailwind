@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 
+
+
 @layer components{
   .loginDiv{
     background-image: linear-gradient(to top, #3ab5b0 0%, #3d99be 31%, #56317a 100%);

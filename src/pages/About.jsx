@@ -31,18 +31,18 @@ const About = () => {
     },
 ]
   return (
-    <div><section className="py-14">
+    <div className='min-h-[80vh] m-auto'><section className="pt-14 ">
     <div className="max-w-screen-xl mx-auto px-4 text-center md:px-8">
         <div className="max-w-xl mx-auto">
-            <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
+            <h3 className="text-orange-400 text-3xl font-montepasifico sm:text-4xl">
                 Meet our team
             </h3>
             <p className="text-gray-600 mt-3">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy.
             </p>
         </div>
-        <div className="mt-12">
-            <ul className="grid gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <div className="mt-12 pt-12">
+            <ul className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 {
                     team.map((item, idx) => (
                         <li key={idx}>
@@ -54,8 +54,8 @@ const About = () => {
                                 />
                             </div>
                             <div className="mt-2">
-                                <h4 className="text-gray-700 font-semibold sm:text-lg">{item.name}</h4>
-                                <p className="text-indigo-600">{item.title}</p>
+                                <h4 className="text-gray-700 font-montepasifico sm:text-lg">{item.name}</h4>
+                                <p className="text-orange-400">{item.title}</p>
                             </div>
                         </li>
                     ))

@@ -9,8 +9,8 @@ const PrivateRouter = () => {
   return user ? (
   <>
       <Navbar />
-       <Outlet />
-       <Footer/>
+       <Outlet  />
+       <Footer />
        </> 
        ):( <Navigate to="/dashboard" />
 
